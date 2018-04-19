@@ -26,7 +26,7 @@ public class Main {
 		// testJPA();
 //		testCoucheDao();
 		
-		AbstractDao.generateClient();
+
 	}
 
 	public static void testCoucheDao() {

@@ -26,6 +26,7 @@
 		</encoder>
 	</appender>
 	<logger name="org.pbv3.launch.Main.java" level="ERROR" />
+	<logger name="org.pbv3.service.ClientServiceImpl" level="ERROR" />
 	<!-- TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF -->
 
 	<root level="ERROR">
