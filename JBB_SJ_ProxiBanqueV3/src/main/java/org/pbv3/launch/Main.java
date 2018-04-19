@@ -15,7 +15,12 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		testJPA();
+		// testJPA();
+		testCoucheDao();
+	}
+
+	public static void testCoucheDao() {
+
 	}
 
 	public static void testJPA() {
@@ -31,14 +36,11 @@ public class Main {
 			// Test persistance
 			Advisor advisor_1 = new Advisor("advisor 1");
 			em.persist(advisor_1);
-			
-
 
 			AccountCurrent accountCurrent_1 = new AccountCurrent();
 			AccountSaving accountSaving_1 = new AccountSaving();
 			AccountSaving accountSaving_2 = new AccountSaving();
-			
-			
+
 			Client client_1 = new Client("Client 1");
 			Client client_2 = new Client("Client 2");
 			client_1.addCurrentAccount(accountCurrent_1);
