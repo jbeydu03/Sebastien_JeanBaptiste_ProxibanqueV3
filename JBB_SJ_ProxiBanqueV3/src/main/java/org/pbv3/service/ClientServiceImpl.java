@@ -8,4 +8,6 @@ package org.pbv3.service;
  */
 public class ClientServiceImpl implements ClientService {
 
+	public ArrayList<Client> selectAll();
+	
 }
