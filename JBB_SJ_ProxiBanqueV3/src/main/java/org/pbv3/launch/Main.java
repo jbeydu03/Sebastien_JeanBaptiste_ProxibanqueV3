@@ -5,21 +5,51 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import org.pbv3.model.Account;
+import org.pbv3.dao.AbstractDao;
+import org.pbv3.dao.ClientDao;
+import org.pbv3.dao.ClientDaoImpl;
 import org.pbv3.model.AccountCurrent;
 import org.pbv3.model.AccountSaving;
 import org.pbv3.model.Advisor;
 import org.pbv3.model.Client;
+import org.pbv3.presentation.TraitementLogin;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
 
+	private static Logger LOGGER = LoggerFactory.getLogger(Main.class);
+
 	public static void main(String[] args) {
 
+		
 		// testJPA();
-		testCoucheDao();
+//		testCoucheDao();
+		
+		AbstractDao.generateClient();
 	}
 
 	public static void testCoucheDao() {
+
+		ClientDao dao = new ClientDaoImpl();
+
+		// CREATE
+		LOGGER.error("RETOUR DAO CREATION : " + dao.create(new Client("New client 1")));
+		Client client = new Client("New client 2");
+		LOGGER.error("RETOUR DAO CREATION : " + dao.create(client));
+
+		// READ
+		LOGGER.error("RETOUR DAO READ :" + dao.select(1L));
+
+		// DELETE
+		LOGGER.error("RETOUR DAO DELETE :" + dao.delete(1L));
+
+		// UPDATE
+		client.setAddress("NEW ADRESS");
+		LOGGER.error("RETOUR DAO UPDATE :" + dao.update(client));
+
+		// GET ALL
+		LOGGER.error("RETOUR DAO get all :" + dao.selectAll());
 
 	}
 
@@ -43,28 +73,11 @@ public class Main {
 
 			Client client_1 = new Client("Client 1");
 			Client client_2 = new Client("Client 2");
-			client_1.addCurrentAccount(accountCurrent_1);
-			client_1.addSavingAccount(accountSaving_1);
-			client_2.addSavingAccount(accountSaving_2);
+			client_1.setCurrentAccount(accountCurrent_1);
+			client_1.setSavingAccount(accountSaving_1);
+			client_2.setSavingAccount(accountSaving_2);
 			em.persist(client_1);
 			em.persist(client_2);
-
-			// em.persist(expenditureSheet_1);
-			//
-			// em.persist(consumer_1);
-			// em.persist(consumer_2);
-			// em.persist(consumer_3);
-			//
-			// em.persist(expense_1);
-			// em.persist(expense_2);
-			// em.persist(expense_3);
-			//
-			// // Find comment_good vargood
-			// System.out.println(((Comment_Good) (em.find(Expense.class,
-			// 1L).getComment())).getVarGood());
-			//
-			// // Remove
-			// em.remove(expense_1);
 
 			// Fin transaction
 			txn.commit();

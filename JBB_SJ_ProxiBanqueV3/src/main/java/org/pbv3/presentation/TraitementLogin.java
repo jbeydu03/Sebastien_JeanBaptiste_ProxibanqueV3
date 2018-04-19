@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  */
 @WebServlet("/TraitementLogin")
 public class TraitementLogin extends HttpServlet {
-	private static Logger LOGGER = LoggerFactory.getLogger(TraitementLogin.class);
+//	private static Logger LOGGER = LoggerFactory.getLogger(TraitementLogin.class);
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -43,10 +43,10 @@ public class TraitementLogin extends HttpServlet {
 		StringBuilder sb = new StringBuilder();
 		String ppesudo = request.getParameter("pseudo");
 		String plogin = request.getParameter("login");
-		sb.append("Tentative de connexion du user : ").append(ppesudo);;
-		String texteLog = sb.toString();
+//		sb.append("Tentative de connexion du user : ").append(ppesudo);;
+//		String texteLog = sb.toString();
 		
-		LOGGER.trace(texteLog);
+//		LOGGER.trace(texteLog);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("accueil.html");
 		dispatcher.forward(request, response);
 	}

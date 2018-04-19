@@ -15,12 +15,12 @@ public interface ClientDao {
 
 	public ArrayList<Client> selectAll();
 
-	public Client select();
+	public Client select(long id);
 
 	public boolean create(Client client);
 
 	public boolean update(Client client);
 
-	public boolean delete(String id);
+	public boolean delete(long id);
 
 }

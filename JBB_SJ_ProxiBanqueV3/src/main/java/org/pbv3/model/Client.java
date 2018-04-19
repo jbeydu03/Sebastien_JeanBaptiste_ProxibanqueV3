@@ -87,6 +87,7 @@ public class Client {
 
 	public void setCurrentAccount(AccountCurrent currentAccount) {
 		this.currentAccount = currentAccount;
+		currentAccount.setClient(this);
 	}
 
 	public AccountSaving getSavingAccount() {
@@ -95,6 +96,7 @@ public class Client {
 
 	public void setSavingAccount(AccountSaving savingAccount) {
 		this.savingAccount = savingAccount;
+		savingAccount.setClient(this);
 	}
 
 	// *** Methods ***
@@ -103,14 +105,5 @@ public class Client {
 		return name;
 	}
 
-	public void addCurrentAccount(AccountCurrent accountCurrent) {
-		setCurrentAccount(accountCurrent);
-		accountCurrent.setClient(this);
-	}
-
-	public void addSavingAccount(AccountSaving accountSaving) {
-		setSavingAccount(accountSaving);
-		accountSaving.setClient(this);
-	}
-
+	
 }
