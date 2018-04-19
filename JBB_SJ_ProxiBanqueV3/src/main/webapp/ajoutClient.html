@@ -57,38 +57,38 @@
 			</nav>
 
 <div class="col-sm-12  col-lg-10"> 
-			<form action="" method="">
+			<form>
 
 
 				<div class="form-group">
 
 					<label>Nom</label> <input type="text"
-						class="form-control"  placeholder="nom">
-
+						class="form-control"  id="nom" placeholder="nom">
 				</div>
+				
 				<div class="form-group">
 					<label>Prénom</label> <input type="text"
 						class="form-control"  placeholder="prénom">
 				</div>
+				
 				<div class="form-group">
 					<label>Email</label> <input type="email"
 						class="form-control"  placeholder="email">
 				</div>
+				
 				<div class="form-group">
 					<label>Adresse</label> <input type="text"
 						class="form-control"  placeholder="adresse">
 				</div>
-				
-				
 
-				<button type="submit" class="btn btn-primary">Valider</button>
+				<button type="button" id="envoyer" onClick="doPost()" class="btn btn-primary">Valider</button>
 			</form>
 	</div>
 
 		</div>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+	
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 			crossorigin="anonymous"></script>
@@ -100,5 +100,7 @@
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
 			integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
 			crossorigin="anonymous"></script>
+		<script src="restClient.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>

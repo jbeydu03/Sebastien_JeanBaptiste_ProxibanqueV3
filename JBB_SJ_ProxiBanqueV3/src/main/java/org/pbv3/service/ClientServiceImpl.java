@@ -22,21 +22,33 @@ public class ClientServiceImpl implements ClientService {
 	ClientDao dao = new ClientDaoImpl();
 	private static Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);
 	StringBuilder sb = new StringBuilder();
-	
+
 	@Override
 	public ArrayList<Client> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+
+		ArrayList<Client> lClientAll = dao.selectAll();
+		
+		if (lClientAll.size() != 0) {
+			sb.append("Liste de clients récupérée ");
+			String textLog = sb.toString();
+			LOGGER.trace(textLog);
+
+		} else {
+			sb.append("Liste de clients non récupérée ");
+			String textLog = sb.toString();
+			LOGGER.trace(textLog);
+		}
+
+			return lClientAll;
+			
 	}
 
-
-	
 	@Override
 	public Client select(String clientId) {
 		Long idLong = Long.valueOf(clientId);
 		Client client = dao.select(idLong);
 		if (client != null) {
-			sb.append("Client : " ).append(client.toString());
+			sb.append("Client : ").append(client.toString());
 			String texteLog = sb.toString();
 			LOGGER.trace(texteLog);
 
@@ -51,86 +63,69 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public Response create(Client client) {
 		Response response = null;
-		
+
 		Boolean bo = dao.create(client);
-		
+
 		if (bo == true) {
 			response = Response.ok().build();
-			sb.append("Client créé " );
+			sb.append("Client créé ");
 			String textLog = sb.toString();
 			LOGGER.trace(textLog);
-			
+
 		} else {
 			response = Response.notModified().build();
-			sb.append("Client non créé " );
+			sb.append("Client non créé ");
 			String textLog = sb.toString();
 			LOGGER.trace(textLog);
 		}
 
 		return response;
 	}
+
 
 	@Override
 	public Response update(Client client) {
 		Response response = null;
-		
-		// OPERATION DAO
-		
-		if (client != null) {
+		Boolean bo = dao.update(client);
+
+		if (bo == true) {
 			response = Response.ok().build();
+			sb.append("Client modifié");
+			String textLog = sb.toString();
+			LOGGER.trace(textLog);
+
 		} else {
 			response = Response.notModified().build();
+			sb.append("Client non  modifié ");
+			String textLog = sb.toString();
+			LOGGER.trace(textLog);
 		}
+
 		return response;
 	}
 
-	
-	
-//	@Override
-//	public Response deleteExpense(String id) {
-
-//		Expense expense = dao.getExpenseJPA(idLong);
-//
-//		if (expense != null) {
-//
-//			dao.deleteExpenseJPA(expense);
-//			response = Response.ok(true).build();
-//
-//		} else {
-//			response = Response.notModified().build();
-//		}
-//
-//		System.out.println("---> deleteExpense() <---");
-//		return response;
-//	}
-	
-	
-	
-
-	
 	@Override
 	public Response delete(String clientId) {
 		Response response = null;
 		Long idLong = Long.valueOf(clientId);
-		
+
 		Boolean bo = dao.delete(idLong);
-		
 
 		// OPERATION DAO
-		
+
 		if (bo == true) {
 			response = Response.ok().build();
-			sb.append("Client supprimé" );
+			sb.append("Client supprimé");
 			String textLog = sb.toString();
 			LOGGER.trace(textLog);
-			
+
 		} else {
 			response = Response.notModified().build();
-			sb.append("Client non supprimé " );
+			sb.append("Client non supprimé ");
 			String textLog = sb.toString();
 			LOGGER.trace(textLog);
 		}
-		
+
 		return response;
 	}
 
