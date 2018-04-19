@@ -1,11 +1,13 @@
 package org.pbv3.model;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Classe repésentant les clients de Proxibanque
@@ -13,7 +15,7 @@ import javax.persistence.OneToOne;
  * @author Jean-Baptiste & Sébastien
  *
  */
-
+@XmlRootElement
 @Entity
 public class Client {
 
