@@ -1,5 +1,4 @@
-
-function doPOST() {
+function doPost() {
 
 		$.ajax({
 			type : "POST",
