@@ -1,0 +1,146 @@
+
+
+
+***********************
+*** CREER UN CLIENT ***
+***********************
+
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/clients/
+METHODE     : POST (Content-Type -> application/xml )
+FLUX ENTREE : 
+
+				<client>
+					<address></address>
+					<email></email>
+					<familyName></familyName>
+					<name></name>
+				</client>
+	
+CODE RETOUR : 200 
+FLUX RETOUR : NA
+
+
+
+******************************
+*** SELECTIONNER UN CLIENT ***
+******************************
+
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/clients/{idDuClient}
+METHODE     : GET (Accept -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200 
+FLUX RETOUR : 
+
+				<client>
+					<address></address>
+					<email></email>
+					<familyName></familyName>
+					<id></id>
+					<name></name>
+				</client>
+
+
+*************************************
+*** SELECTIONNER TOUS LES CLIENTS ***
+*************************************
+
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/clients/
+METHODE     : GET (Accept -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : 
+
+				<clients>
+					<client>
+						<address></address>
+						<email></email>
+						<familyName></familyName>
+						<id></id>
+						<name></name>
+					</client>
+					<client>
+						<address></address>
+						<email></email>
+						<familyName></familyName>
+						<id></id>
+						<name></name>
+					</client>
+				</clients>
+
+
+
+***************************
+*** SUPPRIMER UN CLIENT ***
+***************************
+
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/clients/{idDuClient}
+METHODE     : DELETE (Content-Type -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+
+
+**************************
+*** MODIFIER UN CLIENT ***
+**************************
+
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/clients/
+METHODE     : PUT (Content-Type -> application/xml )
+FLUX ENTREE :
+				<client>
+					<address></address>
+					<email></email>
+					<familyName></familyName>
+					<id></id>
+					<name></name>
+				</client>
+				
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+*********************************************
+*** AJOUTER UN COMPTE COURANT A UN CLIENT ***
+*********************************************
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/createAccountCurrent/{idClient}
+METHODE     : POST (Content-Type -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+*********************************************
+*** AJOUTER UN COMPTE EPARGNE A UN CLIENT ***
+*********************************************
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/createAccountSaving/{idClient}
+METHODE     : POST (Content-Type -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+
+***********************************************
+*** SUPPRIMER UN COMPTE COURANT A UN CLIENT ***
+***********************************************
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/deleteAccountCurrent/{idClient}
+METHODE     : DELETE (Content-Type -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+***********************************************
+*** SUPPRIMER UN COMPTE EPARGNE A UN CLIENT ***
+***********************************************
+URL         : http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/deleteAccountSaving/{idClient}
+METHODE     : DELETE (Content-Type -> application/xml )
+FLUX ENTREE : NA
+CODE RETOUR : 200
+FLUX RETOUR : NA
+
+
+
+

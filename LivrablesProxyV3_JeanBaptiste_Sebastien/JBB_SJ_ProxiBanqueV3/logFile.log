@@ -1,0 +1,4 @@
+10:21:07.973 971  [main] ERROR o.h.tool.hbm2ddl.SchemaExport
+				- HHH000389: Unsuccessful: alter table Account drop foreign key FK_6o6pwq91ma079l21lw4xpmmld
+10:21:07.975 973  [main] ERROR o.h.tool.hbm2ddl.SchemaExport
+				- Table 'jbb_sj_proxibanquev3.account' doesn't exist

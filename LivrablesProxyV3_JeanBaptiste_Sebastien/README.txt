@@ -10,49 +10,44 @@
 
 Le projet permet la gestion de clients via une interface web et de webServices.
 Pour cela, les ressources utilisées sont : 
-- un navigateur web (au choix),
+- un navigateur web (Chrome fortement recommandé),
 - un serveur TOMCAT,
 - une base de données MySql.
 
+Fonctionnalités des web services: 
+- Ajout/Suppression/Modification/Lecture de client;
+- Lecture de l'ensemble des clients;
+- Ajout/Suppression de comptes courants/épargnes associés à un client;
 
 
-L'application comprend plusieurs fonctionnalités : 
+Fonctionnalités de l'IHM: 
 	- Authentification du conseiller bancaire;
-	- Afficher la liste des clients affectés;
+	- Afficher la liste des clients;
 	- Affichage des données personnelles d'un client;
 	- Modification de clients;
 	- Ajout de nouveaux clients;
 	- Suppression de clients et des comptes associés;
 	- Ajout et suppression de comptes bancaires : courant et/ou epargne;
+	- Les différents écrans consomment les web services;
 
 	
 	
 2. Livrables
 
 Le dossier "Sebastien_JeanBaptiste_ProxibanqueV3" contient les livrables suivants:
- - un fichier texte : "README_PROXIBANQUE_V3_JB_SJ.txt" : description globale de l'application;
- - un dossier "JBB_SJ_ProxiBanqueV3". Ce dernier comprend : 
-		. Un dossier "JAVADOC". 
-		Se positionner dans le dossier puis lancer le fichier index.html pour consulter la javadoc;
-		. Un dossier "src". 
-		Contient le code de l'application.
- - un dossier "UML" : contient :
+ - un fichier texte : "README.txt" : description globale de l'application;
+ - un dossier : "JAVADOC". Se positionner dans le dossier puis lancer le fichier index.html pour consulter la javadoc;
+ - un dossier "JBB_SJ_ProxiBanqueV3". Ce dernier comprend l'application Eclipse/Maven
+ - un dossier "UML" : 
+		. Diagramme_de_classes.png
+		. Diagramme_de_cas_d.utilisation.png
+		. Diagramme_de_deploiement.png	
+ - un dossier "Maquette" : contient :
+		. MockUp_Computer.pdf
+		. MockUp_Phone.pdf
+ - un fichier : "Flux WebServices REST.txt" qui contient la description des flux des WebServices
  
-		. Diagramme de classe proxibanqueV3.PNG
-		. Diagramme_de_déploiement.PNG
-
-		
- - un dossier "MockUp" : contient :
-		. Diagrammedeclasses_proxibanqueV2 - JBBCS.PNG
-		. Diagramme de déploiement_proxibanqueV2 - JBBCS.PNG
-		. Un dossier "Ecrans_proxibanqueV2 - JBBCS" contenant les écrans de conceptions des vues utilisateurs
-		
-		
-Tous ces fichiers sont fournis sous forme de PDF et d'images.
-		
-		
-		
-		
+	
 3. Installation du projet 
 
 ---------------- Démarrage  serveur APACHE, MySql --------------------------
@@ -60,8 +55,6 @@ Tous ces fichiers sont fournis sous forme de PDF et d'images.
 - Cliquer sur Start pour les applications APACHE et MySql
 
 Le serveur Apache est en service et la base de données est accessible.
-
-
 
 ---------------- Import du dossier Eclipse -----------------
 
