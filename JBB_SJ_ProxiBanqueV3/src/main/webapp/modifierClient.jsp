@@ -62,7 +62,24 @@
 			</nav>
 
 			<div class="col-sm-12  col-lg-10">
-				<form>
+			
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Infos clients</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Ajouter un compte</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-delete-compte" role="tab" aria-controls="pills-profile" aria-selected="false">Supprimer un compte</a>
+  </li>
+</ul>
+
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+  
+  <form>
 
 
 					<div class="form-group">
@@ -90,6 +107,54 @@
 					<button type="button" id="envoyer" onClick="doPut()"
 						class="btn btn-primary">Valider</button>
 				</form>
+  </div>
+  
+  
+  
+  
+  
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  
+  					<button type="button" id="envoyer" onClick="doPostCompteCourant()"
+						class="btn btn-link">Ajouter un compte courant</button>
+						
+						<br/>
+						
+						<button type="button" id="envoyer" onClick="doPostCompteEpargne()"
+						class="btn btn-link">Ajouter un compte épargne</button>
+
+  
+  </div>
+
+  <div class="tab-pane fade" id="pills-delete-compte" role="tabpanel" aria-labelledby="pills-profile-tab">
+  
+  					<button type="button" id="envoyer" onClick="doDeleteCompteCourant()"
+						class="btn btn-link">Supprimer un compte courant</button>
+						
+						<br/>
+						
+						<button type="button" id="envoyer" onClick="doDeleteCompteEpargne()"
+						class="btn btn-link">Supprimer un compte épargne</button>
+
+  
+  </div>
+
+
+
+</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
 			</div>
 
 		</div>
