@@ -1,11 +1,12 @@
 package org.pbv3.model;
 
-
 import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -15,6 +16,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Jean-Baptiste & Sébastien
  *
  */
+
+
 @XmlRootElement
 @Entity
 public class Client {
@@ -28,10 +31,12 @@ public class Client {
 	private String email;
 	private String address;
 
-	@OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
+	@JoinColumn(name = "currentAccount_id")
 	private AccountCurrent currentAccount;
 
-	@OneToOne(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
+	@JoinColumn(name = "savingAccount_id")
 	private AccountSaving savingAccount;
 
 	// *** Constructors ***
@@ -89,7 +94,6 @@ public class Client {
 
 	public void setCurrentAccount(AccountCurrent currentAccount) {
 		this.currentAccount = currentAccount;
-		currentAccount.setClient(this);
 	}
 
 	public AccountSaving getSavingAccount() {
@@ -98,7 +102,6 @@ public class Client {
 
 	public void setSavingAccount(AccountSaving savingAccount) {
 		this.savingAccount = savingAccount;
-		savingAccount.setClient(this);
 	}
 
 	// *** Methods ***
@@ -107,5 +110,4 @@ public class Client {
 		return name;
 	}
 
-	
 }

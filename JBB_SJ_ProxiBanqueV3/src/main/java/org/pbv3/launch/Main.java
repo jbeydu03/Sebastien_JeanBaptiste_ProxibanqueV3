@@ -5,14 +5,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import org.pbv3.dao.AbstractDao;
 import org.pbv3.dao.ClientDao;
 import org.pbv3.dao.ClientDaoImpl;
 import org.pbv3.model.AccountCurrent;
 import org.pbv3.model.AccountSaving;
 import org.pbv3.model.Advisor;
 import org.pbv3.model.Client;
-import org.pbv3.presentation.TraitementLogin;
+import org.pbv3.service.ClientService;
+import org.pbv3.service.ClientServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,10 +25,19 @@ public class Main {
 		
 		// testJPA();
 //		testCoucheDao();
-		
+		testService();
 
 	}
-
+	public static void testService() {
+		ClientService service = new ClientServiceImpl();
+		Client client = new Client("New client 1");
+		service.create(client);
+		service.createAccountCurrent("1");
+		System.out.println(service.select("1").getCurrentAccount());
+	}
+	
+	
+	
 	public static void testCoucheDao() {
 
 		ClientDao dao = new ClientDaoImpl();
