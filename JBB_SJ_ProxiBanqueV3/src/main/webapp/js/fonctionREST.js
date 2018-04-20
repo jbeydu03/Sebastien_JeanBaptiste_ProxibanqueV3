@@ -21,15 +21,15 @@ function doPost() {
 //------------FIN DE LISTENER DE POST---------------//
 
 //------------LISTENER DE DELETE---------------//
+
 var element = document.querySelectorAll("#delete");
 var i = element.length;
-for(var j=0; j<i; j++){
+for(var j=0; j==i; j++){
 	element[j].addEventListener("click", del,false);	
 }
 
 
 function del() {
-
 	$.ajax({
 	type : "DELETE",
 	contentType : "application/json; charset=utf-8",

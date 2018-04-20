@@ -12,6 +12,7 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 <title>Hello, world!</title>
 </head>
@@ -39,7 +40,7 @@
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Gérer vos clients </a>
+							aria-expanded="false"> Gérer vos clients  </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="SelectAllClients">Liste de vos clients</a> <a
 									class="dropdown-item" href="ajoutClient.html">Ajouter un client</a>
@@ -76,8 +77,8 @@
 				<td><c:out value="${client.id}"/></td>
 				<td><c:out value="${client.familyName}" /></td>
 				<td><c:out value="${client.name}" /></td>
-			<td><a href="AffichageSimpleClient?idclient=${client.id}">a</a></td>
-  				<td><a href="AffichageClient?idclient=${client.id}">m</a></td>
+			<td><a href="AffichageSimpleClient?idclient=${client.id}"><i class="fas fa-eye"></i></a></td>
+  				<td><a href="AffichageClient?idclient=${client.id}"><i class="far fa-edit"></i></a></td>
  				<td><button  type="button" class="btn btn-link" name=${client.id} id="delete"  value="${client.id}" >x</button></td>
 			</tr>
 <%-- 	 <c:set var="item" value="${names} ${joueurC.name}"/> --%>
