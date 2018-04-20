@@ -15,8 +15,12 @@ import org.pbv3.service.ClientService;
 import org.pbv3.service.ClientServiceImpl;
 
 /**
- * Servlet implementation class SelectAllClients
+ * Servlet qui demande à un service la liste de tous les clients en BDD
+ * Revoie à listeClient.jsp 
+ * 
+ * @author Jean-Baptiste & Sébastien
  */
+
 @WebServlet("/SelectAllClients")
 public class SelectAllClients extends HttpServlet {
 	private static final long serialVersionUID = 1L;

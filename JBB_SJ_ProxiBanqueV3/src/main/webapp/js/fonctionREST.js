@@ -75,7 +75,7 @@ function del() {
 
 	//------------POST DE COMPTE COURANT---------------
 	function doPostCompteCourant() {
-		alert($('#id').val());
+
 		$.ajax({
 			type : "POST",
 			contentType : "application/json; charset=utf-8",
@@ -86,13 +86,14 @@ function del() {
 			 url : 'http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/createAccountCurrent/'
 				+ $('#id').val(),
 		});
+		alert("Compte créé");
 		document.location.href="SelectAllClients";
 
 	};
 	
 	//------------POST DE COMPTE EPARGNE---------------
 	function doPostCompteEpargne() {
-		alert($('#id').val());
+
 		$.ajax({
 			type : "POST",
 			contentType : "application/json; charset=utf-8",
@@ -103,13 +104,14 @@ function del() {
 			 url : 'http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/createAccountSaving/'
 				+ $('#id').val(),
 		});
+		alert("Compte créé");
 		document.location.href="SelectAllClients";
 
 };
 
 //------------DELETE DE COMPTE EPARGNE---------------
 function doDeleteCompteEpargne() {
-	alert($('#id').val());
+
 	$.ajax({
 		type : "DELETE",
 		contentType : "application/json; charset=utf-8",
@@ -120,12 +122,13 @@ function doDeleteCompteEpargne() {
 		 url : 'http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/deleteAccountSaving/'
 			+ $('#id').val(),
 	});
+	alert("Compte surrpimé");
 	document.location.href="SelectAllClients";
 };
 
 //------------DELETE DE COMPTE EPARGNE---------------
 function doDeleteCompteCourant() {
-	alert($('#id').val());
+
 	$.ajax({
 		type : "DELETE",
 		contentType : "application/json; charset=utf-8",
@@ -136,7 +139,9 @@ function doDeleteCompteCourant() {
 		 url : 'http://localhost:8080/JBB_SJ_ProxiBanqueV3/services/JBB_SJ_ProxiBanque/deleteAccountCurrent/'
 			+ $('#id').val(),
 	});
+	alert("Compte surrpimé");
 	document.location.href="SelectAllClients";
+
 };
 
 	

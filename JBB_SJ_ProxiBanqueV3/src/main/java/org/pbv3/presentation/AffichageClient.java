@@ -13,8 +13,12 @@ import org.pbv3.service.ClientService;
 import org.pbv3.service.ClientServiceImpl;
 
 /**
- * Servlet implementation class AffichageClient
+ * Servlet qui demande à un service les données d'un client en BDD.
+ * Revoie à modifierClient.jsp 
+ * 
+ * @author Jean-Baptiste & Sébastien
  */
+
 @WebServlet("/AffichageClient")
 public class AffichageClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;

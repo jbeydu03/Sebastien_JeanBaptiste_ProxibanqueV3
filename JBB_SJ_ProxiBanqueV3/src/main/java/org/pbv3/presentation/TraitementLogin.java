@@ -13,8 +13,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Servlet implementation class TraitementLogin
+ * Servlet qui redirige vers la page d'accueil après l'authentification de l'utilisateur.
+ * 
+ * @author Jean-Baptiste & Sébastien
  */
+
 @WebServlet("/TraitementLogin")
 public class TraitementLogin extends HttpServlet {
 	private static Logger LOGGER = LoggerFactory.getLogger(TraitementLogin.class);
