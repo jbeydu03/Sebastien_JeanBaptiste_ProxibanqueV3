@@ -37,7 +37,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> Gérer vos clients </a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Liste de vos clients</a> <a
+								<a class="dropdown-item" href="SelectAllClients">Liste de vos clients</a> <a
 									class="dropdown-item" href="#">Ajouter un client</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
@@ -68,17 +68,17 @@
 				
 				<div class="form-group">
 					<label>Prénom</label> <input type="text"
-						class="form-control"  placeholder="prénom">
+						class="form-control" id="prenom" placeholder="prénom">
 				</div>
 				
 				<div class="form-group">
 					<label>Email</label> <input type="email"
-						class="form-control"  placeholder="email">
+						class="form-control" id="email" placeholder="email">
 				</div>
 				
 				<div class="form-group">
 					<label>Adresse</label> <input type="text"
-						class="form-control"  placeholder="adresse">
+						class="form-control" id="address" placeholder="adresse">
 				</div>
 
 				<button type="button" id="envoyer" onClick="doPost()" class="btn btn-primary">Valider</button>

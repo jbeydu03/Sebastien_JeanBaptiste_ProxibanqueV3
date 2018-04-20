@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,6 +59,30 @@
 					</ul>
 				</div>
 			</nav>
+			
+		<table class="col-sm-12 table table-striped">
+		<tr>
+			<th>ID</th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Afficher</th>
+			<th>Modifier</th>
+			<th>Supprimer</th>
+
+			
+		</tr>
+		<c:forEach items="${listeclients}" var="client">
+			<tr>
+				<td><c:out value="${client.id}"/></td>
+				<td><c:out value="${client.familyName}" /></td>
+				<td><c:out value="${client.name}" /></td>
+			<td><a href="AffichageSimpleClient?idclient=${client.id}">a</a></td>
+  				<td><a href="AffichageClient?idclient=${client.id}">m</a></td>
+ 				<td><button  type="button" class="btn btn-link" name=${client.id} id="delete"  value="${client.id}" >x</button></td>
+			</tr>
+<%-- 	 <c:set var="item" value="${names} ${joueurC.name}"/> --%>
+		</c:forEach>
+	</table>
 
 		</div>
 		<!-- Optional JavaScript -->
@@ -71,5 +99,7 @@
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
 			integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
 			crossorigin="anonymous"></script>
+		<script src="js/fonctionREST.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>
