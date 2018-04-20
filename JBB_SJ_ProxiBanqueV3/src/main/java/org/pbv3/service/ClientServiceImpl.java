@@ -22,7 +22,12 @@ public class ClientServiceImpl implements ClientService {
 	ClientDao dao = new ClientDaoImpl();
 	private static Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);
 	StringBuilder sb = new StringBuilder();
-
+	
+	// **** Pour les tests MOKITO ***
+	public void setDao(ClientDao dao) {
+		this.dao = dao;
+	}
+	
 	@Override
 	public ArrayList<Client> selectAll() {
 
