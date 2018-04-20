@@ -1,5 +1,7 @@
 package org.pbv3.model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +10,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Classe Abstraite dont hérite les comptes courants et épargnes.
@@ -24,10 +27,6 @@ public abstract class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private double balance;
-
-	@OneToOne
-	@JoinColumn(name = "client_id")
-	private Client client;
 
 	// *** Constructors ***
 	public Account() {
@@ -50,13 +49,6 @@ public abstract class Account {
 		this.balance = balance;
 	}
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
 
 	// *** Methods ***
 	@Override

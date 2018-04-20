@@ -1,5 +1,6 @@
 package org.pbv3.model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 /**
@@ -8,8 +9,13 @@ import javax.persistence.Entity;
  * @author Jean-Baptiste & Sébastien
  *
  */
+
 @Entity
 public class AccountCurrent extends Account{
 
 	public static final double OVERDRAFT = -500.01;
+	
+	public AccountCurrent() {
+		
+	}
 }
